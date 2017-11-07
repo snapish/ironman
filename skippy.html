@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<head>
+    <link rel="stylesheet" href ='/ironman/skippy.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+</head>
+<body>
+        <button id="roll" onclick="roll()">Roll Characters</button>
+    <div class = "flex-container" id ="player1">
+    </div>
+
+    <div class="flex-container" id="player2">
+    </div>
+
+    <script>
+        function Random(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+        }
+        function roll() {
+            var characterSlots = 4;
+            var player1 = new Set();
+            var player2 = new Set();
+            var selection;
+            while (player1.size < characterSlots) { //runs thru until set is full 
+                selection = Random(1, 26); //rolls for 1-25
+                player1.add(selection); //adds roll to the set
+            }
+            while (player2.size < characterSlots) {
+                selection = Random(1, 26);
+                player2.add(selection);
+            }
+            console.log(player1);
+            console.log(player2);
+            
+            var divs = '';
+           player1.forEach(function(item) {
+                   var path = "/ironman/images/" + item +".png";
+                   divs  += '<div class="flex-item" ><img src="' + path+'"></div>';
+                    console.log(divs)
+           });
+         
+            document.getElementById("player1").innerHTML = divs;
+            var divs = '';
+           player2.forEach(function(item) {
+                   var path = "/ironman/images/" + item +".png";
+                   divs  += '<div class="flex-item" ><img src="' + path+'"></div>';
+                    console.log(divs)
+           });
+         
+            document.getElementById("player2").innerHTML = divs;
+        
+        }
+    </script>
+</body>
+
+
