@@ -10,7 +10,9 @@
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
 }
-
+body{
+    background-color: black;
+}
 .flex-item {
   padding: 5px;
   width: 200px;
@@ -23,8 +25,8 @@
   text-align: center;
 }
 #player1{
-    background-color: gainsboro;
+    background-color: blue;
 }
 #player2{
-    background-color: red;
+    background-color: #990033;
 }
