@@ -24,9 +24,34 @@ body{
   font-size: 3em;
   text-align: center;
 }
+#roll {
+    background-color: #76A3F4;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 #player1{
-    background-color: blue;
+    background-color: #F18586;
 }
 #player2{
-    background-color: #990033;
+    background-color: #8284D7;
+}
+#player3{
+    background-color: #DEC165;
+}
+#player4{
+    background-color: #66D398;
+}
+#shiekbox{
+   color: white;
+}
+#playersdrop{
+    color: white;
+}
+#chardrop{
+    color: white;
 }

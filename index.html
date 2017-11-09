@@ -4,52 +4,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=.8">
 </head>
 <body>
-        <button id="roll" onclick="roll()">Roll Characters</button>
+    <button id="roll" onclick="roll()">Roll Characters</button>
+    <div id="shiekbox">
+    <input id="checkbox"  type="checkbox" >
+    <label >Split Shiek and Zelda </label>
+   </div>
     <div class = "flex-container" id ="player1">
     </div>
-
     <div class="flex-container" id="player2">
     </div>
-
+    <div class="flex-container" id="player3">
+    </div>
+    <div class="flex-container" id="player4">
+    </div>
+    <div id="playersdrop">
+    <select id="players">
+        <option value ='1'> 1</option>
+        <option selected value ='2'> 2</option>
+        <option value ='3'> 3</option>
+        <option  value ='4'> 4</option>
+    </select> Player Count
+    </div>
+    <div id="chardrop">
+    <select id = "chars">
+        <option value ='1'> 1</option>
+        <option value ='2'> 2</option>
+        <option value ='3'> 3</option>
+        <option selected value ='4'> 4</option>
+        <option value ='5'> 5</option>
+        <option value ='6'> 6</option>
+        <option value ='7'> 7</option>
+        <option value ='8'> 8</option>
+        <option value ='9'> 9</option>
+        <option value ='10'> 10</option>
+        <option value ='11'> 11</option>
+        <option value ='12'> 12</option>
+        <option value ='13'> 13</option>
+        <option value ='14'> 14</option>
+        <option value ='15'> 15</option>
+        <option value ='16'> 16</option>
+        <option value ='17'> 17</option>
+        <option value ='18'> 18</option>
+        <option value ='19'> 19</option>
+        <option value ='20'> 20</option>
+        <option value ='21'> 21</option>
+        <option value ='22'> 22</option>
+        <option value ='23'> 23</option>
+        <option value ='24'> 24</option>
+        <option value ='25'> 25</option>
+        <option id="shiek" value ='26'> 26</option>
+    </select>
+        Character Count
+    </div>
     <script>
-        function Random(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
+        var checkbox = document.getElementById("checkbox");
+
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById("shiek").style.display = "none";
+            } else {
+                document.getElementById("shiek").style.display = "block";
+            }
+        });
+        function Random() {
+            var min = 1;
+            var max = 26;
+            if (document.getElementById("checkbox").checked)
+                max = 27;
             return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
         }
         function roll() {
-            var characterSlots = 4;
+            var characterSlots = document.getElementById("chars").value; //gets dropdown value
             var player1 = new Set();
             var player2 = new Set();
+            var player3 = new Set();
+            var player4 = new Set();
             var selection;
             while (player1.size < characterSlots) { //runs thru until set is full 
-                selection = Random(1, 26); //rolls for 1-25
+                selection = Random(); //rolls for 1-26
                 player1.add(selection); //adds roll to the set
             }
+                       console.log(player1);
             while (player2.size < characterSlots) {
-                selection = Random(1, 27);
+                selection = Random();
                 player2.add(selection);
             }
-            console.log(player1);
-            console.log(player2);
-            
+                        console.log(player2);
+            if(document.getElementById("players").value == 4 || document.getElementById("players").value == 3){
+            while (player3.size < characterSlots) {
+                selection = Random();
+                player3.add(selection);
+            }
+            }
+            if(document.getElementById("players").value == 4 ){
+            while (player4.size < characterSlots) {
+                selection = Random();
+                player4.add(selection);
+            }
+            }
             var divs = '';
-           player1.forEach(function(item) {
-                   var path = "/ironman/images/" + item +".png";
-                   divs  += '<div class="flex-item" ><img src="' + path+'"></div>';
-                    console.log(divs)
-           });
-         
+            player1.forEach(function (item) {
+                var path = "/ironman/images/" + item + ".png";
+                divs += '<div class="flex-item" ><img src="' + path + '"></div>';
+                console.log(divs)
+            });
+
             document.getElementById("player1").innerHTML = divs;
             var divs = '';
-           player2.forEach(function(item) {
-                   var path = "/ironman/images/" + item +".png";
-                   divs  += '<div class="flex-item" ><img src="' + path+'"></div>';
-                    console.log(divs)
-           });
-         
+            player2.forEach(function (item) {
+                var path = "/ironman/images/" + item + ".png";
+                divs += '<div class="flex-item" ><img src="' + path + '"></div>';
+                console.log(divs)
+            });
+
             document.getElementById("player2").innerHTML = divs;
-        
+            var divs = '';
+            player3.forEach(function (item) {
+                var path = "/ironman/images/" + item + ".png";
+                divs += '<div class="flex-item" ><img src="' + path + '"></div>';
+                console.log(divs)
+            });
+
+            document.getElementById("player3").innerHTML = divs;
+            var divs = '';
+            player4.forEach(function (item) {
+                var path = "/ironman/images/" + item + ".png";
+                divs += '<div class="flex-item" ><img src="' + path + '"></div>';
+                console.log(divs)
+            });
+
+            document.getElementById("player4").innerHTML = divs;
+
         }
     </script>
 </body>
