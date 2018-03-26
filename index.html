@@ -9,6 +9,8 @@
     <input id="checkbox"  type="checkbox" checked >
     <label >Split Shiek and Zelda </label>
    </div>
+    <input id="shittiesbox" type="checkbox" checked>
+    <label>Remove the shitties</label>
     <div class = "flex-container" id ="player1">
     </div>
     <div class="flex-container" id="player2">
@@ -57,7 +59,7 @@
     </div>
     <script>
         var checkbox = document.getElementById("checkbox"); 
-
+        var shitties = [14,16,17,19,22,23,25,4,6,7]; //array of characters image numbers--- kirby, zelda, link, pichu, mewtwo, gw, roy,yoshi, bowser, dk
         checkbox.addEventListener('change', function () { //when the checkbox is used
             if(document.getElementById("chars").value == 26){ //if 26 is selected
                document.getElementById("chars").selectedIndex = 24; //change it to 25
@@ -74,6 +76,7 @@
             var max = 26;
             if (document.getElementById("checkbox").checked)
                 max = 27;
+            
             return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
         }
         function roll() {
@@ -83,24 +86,69 @@
             var player3 = new Set();
             var player4 = new Set();
             var selection;
+            var bool = true;
             while (player1.size < characterSlots) { //runs thru until set is full 
-                selection = Random(); //rolls for 1-26
-                player1.add(selection); //adds roll to the set
+                 bool = true;
+                if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
+                while(bool){ 
+                    selection = Random(); //rolls for 1-26
+                    // my lazy check for if the roll is a shitty
+                    if(selection != shitties[0] && selection != shitties[1] && selection != shitties[2] && selection != shitties[3] && selection != shitties[4] && selection != shitties[5] && selection != shitties[6] && selection != shitties[7] && selection != shitties[8] && selection != shitties[9] )
+                        bool = false; //stops the loop because the roll was not a shitty
+                    player1.add(selection); // adds
+                }
+            }
+            else{
+                    player1.add(selection);//adds  roll to the set
+                }
             }
             while (player2.size < characterSlots) { 
-                selection = Random();
-                player2.add(selection); 
+                 bool = true;
+                if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
+                while(bool){ 
+                    selection = Random(); //rolls for 1-26
+                    // my lazy check for if the roll is a shitty
+                    if(selection != shitties[0] && selection != shitties[1] && selection != shitties[2] && selection != shitties[3] && selection != shitties[4] && selection != shitties[5] && selection != shitties[6] && selection != shitties[7] && selection != shitties[8] && selection != shitties[9] )
+                        bool = false; //stops the loop because the roll was not a shitty
+                    player2.add(selection); // adds
+                }
+            }
+            else{
+                    player1.add(selection);//adds  roll to the set
+                }
             }
             if(document.getElementById("players").value == 4 || document.getElementById("players").value == 3){ //3 or 4 players selected
             while (player3.size < characterSlots) {
-                selection = Random();
-                player3.add(selection);
+                 bool = true;
+                if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
+                while(bool){ 
+                    selection = Random(); //rolls for 1-26
+                    // my lazy check for if the roll is a shitty
+                    if(selection != shitties[0] && selection != shitties[1] && selection != shitties[2] && selection != shitties[3] && selection != shitties[4] && selection != shitties[5] && selection != shitties[6] && selection != shitties[7] && selection != shitties[8] && selection != shitties[9] )
+                        bool = false; //stops the loop because the roll was not a shitty
+                    player3.add(selection); // adds
+                }
+            }
+            else{
+                    player1.add(selection);//adds  roll to the set
+                }
             }
             }
             if(document.getElementById("players").value == 4 ){ 
             while (player4.size < characterSlots) {
-                selection = Random();
-                player4.add(selection);
+                 bool = true;
+                if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
+                while(bool){ 
+                    selection = Random(); //rolls for 1-26
+                    // my lazy check for if the roll is a shitty
+                    if(selection != shitties[0] && selection != shitties[1] && selection != shitties[2] && selection != shitties[3] && selection != shitties[4] && selection != shitties[5] && selection != shitties[6] && selection != shitties[7] && selection != shitties[8] && selection != shitties[9] )
+                        bool = false; //stops the loop because the roll was not a shitty
+                    player1.add(selection); // adds
+                }
+            }
+            else{
+                    player4.add(selection);//adds  roll to the set
+                }
             }
             }
             var divs = '';
