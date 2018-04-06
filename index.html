@@ -23,6 +23,8 @@
     </div>
     <div class="flex-container" id="player4">
     </div>
+    <div class="flex-container" id="stage">
+    </div>
     <div id="playersdrop">
     <select id="players">
         <option selected value ='2'> 2</option>
@@ -91,7 +93,7 @@
             var player4 = new Set();
             var selection;
             var bool = false;
-            
+            var stage = Random() % 17;
             
             
             while (player1.size < characterSlots) { //runs thru until set is full 
@@ -228,6 +230,11 @@
             });
 
             document.getElementById("player4").innerHTML = divs;
+            
+            var divs = '';
+            var path = "/ironman/stages/" + stage + ".png";
+         divs += '<div class="flex-item" ><img src="' + path + '"></div>';
+            document.getElementById("stage").innerHTML = divs;
 
         }
     </script>
