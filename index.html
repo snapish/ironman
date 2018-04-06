@@ -8,9 +8,11 @@
     <div id="shiekbox">
     <input id="checkbox"  type="checkbox" checked >
     <label >Split Shiek and Zelda </label>
-   </div>
+
     <input id="shittiesbox" type="checkbox" checked>
     <label>Remove the shitties</label>
+       </div>
+
     <div class = "flex-container" id ="player1">
     </div>
     <div class="flex-container" id="player2">
@@ -86,10 +88,16 @@
             var player3 = new Set();
             var player4 = new Set();
             var selection;
-            var bool = true;
+            var bool = false;
+            
+            
+            
             while (player1.size < characterSlots) { //runs thru until set is full 
-                 bool = true;
+                if(!document.getElementById("shittiesbox").checked)
+                    console.log("shitties are in play");
                 if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
+                                     bool = true;
+                                     console.log("Shitties are not in play");
                 while(bool){ 
                     selection = Random(); //rolls for 1-26
                     // my lazy check for if the roll is a shitty
@@ -110,6 +118,9 @@
                 }
                 }
             }
+            
+            
+            
             while (player2.size < characterSlots) { 
                  bool = true;
                 if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
