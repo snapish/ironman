@@ -101,9 +101,12 @@
                 
             }
             else{
+                console.log("In the else statement");
                 while (player1.size < characterSlots) {
+                    console.log("In the while loop");
                     selection = Random();
                     player1.add(selection);//adds  roll to the set
+                    console.log("Added a character to set");
                 }
                 }
             }
@@ -121,7 +124,7 @@
             else{
                                     while (player1.size < characterSlots) {
                     selection = Random();
-                    player1.add(selection);//adds  roll to the set
+                    player2.add(selection);//adds  roll to the set
                 }
                 }
             }
@@ -140,7 +143,7 @@
             else{
                                     while (player1.size < characterSlots) {
                     selection = Random();
-                    player1.add(selection);//adds  roll to the set
+                    player3.add(selection);//adds  roll to the set
                 }
                 }
             }
@@ -154,13 +157,16 @@
                     // my lazy check for if the roll is a shitty
                     if(selection != shitties[0] && selection != shitties[1] && selection != shitties[2] && selection != shitties[3] && selection != shitties[4] && selection != shitties[5] && selection != shitties[6] && selection != shitties[7] && selection != shitties[8] && selection != shitties[9] ){
                         bool = false; //stops the loop because the roll was not a shitty
-                    player1.add(selection); // adds
+                    player4.add(selection); // adds
                 }}
             }
             else{
-                                   while (player1.size < characterSlots) {
+                console.log("Made it past shtities box check, now in the else statement");
+                                   while (player4.size < characterSlots) {
+                                       console.log("In the while loop");
                     selection = Random();
-                    player1.add(selection);//adds  roll to the set
+                    player4.add(selection);//adds  roll to the set
+                    console.log("Added character to player4");
                 }
                 }
             }
