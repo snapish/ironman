@@ -64,6 +64,7 @@
         Character Count
     </div>
     <script>
+        var stageset = new Set();
         var checkbox = document.getElementById("checkbox"); 
         var shitties = [14,16,17,19,22,23,25,4,6,7]; //array of characters image numbers--- kirby, zelda, link, pichu, mewtwo, gw, roy,yoshi, bowser, dk
         checkbox.addEventListener('change', function () { //when the checkbox is used
@@ -236,7 +237,8 @@
             var path = "/ironman/stages/" + stage + ".png";
          divs += '<div class="flex-item" ><img src="' + path + '"></div>';
             document.getElementById("stage").innerHTML = divs;
-console.log(stage)
+            stageset.add(stage);
+console.log(stageset)
         }
     </script>
 </body>
