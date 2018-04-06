@@ -102,10 +102,10 @@
                     console.log("shitties are in play");
                 if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
                                      bool = true;
-                                     //console.log("Shitties are not in play");
+                                     console.log("Shitties are not in play");
                 while(bool){ 
                     selection = Random(); //rolls for 1-26
-                     my lazy check for if the roll is a shitty
+                   //  my lazy check for if the roll is a shitty
                     if(selection != shitties[0] && selection != shitties[1] && selection != shitties[2] && selection != shitties[3] && selection != shitties[4] && selection != shitties[5] && selection != shitties[6] && selection != shitties[7] && selection != shitties[8] && selection != shitties[9] ){
                         bool = false; //stops the loop because the roll was not a shitty
                     player1.add(selection); // adds
