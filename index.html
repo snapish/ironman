@@ -114,26 +114,21 @@
                 
             }
             else{
-                console.log("In the else statement");
                 while (player1.size < characterSlots) {
-                    console.log("In the while loop");
                     selection = Random();
                     player1.add(selection);//adds  roll to the set
-                    console.log("Added a character to set");
                 }
-                console.log("out of while loop in else")
                 }
-                console.log("out of else ")
             }
             
             
             
               while (player2.size < characterSlots) { //runs thru until set is full 
-                if(!document.getElementById("shittiesbox").checked)
-                    console.log("shitties are in play");
+                if(!document.getElementById("shittiesbox").checked){}
+
                 if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
                                      bool = true;
-                                     console.log("Shitties are not in play");
+
                 while(bool){ 
                     selection = Random(); //rolls for 1-26
                     // my lazy check for if the roll is a shitty
@@ -145,12 +140,9 @@
                 
             }
             else{
-                console.log("In the else statement");
                 while (player2.size < characterSlots) {
-                    console.log("In the while loop");
                     selection = Random();
                     player2.add(selection);//adds  roll to the set
-                    console.log("Added a character to set");
                 }
                 }
             }
@@ -189,12 +181,9 @@
                 }}
             }
             else{
-                console.log("Made it past shtities box check, now in the else statement");
                                    while (player4.size < characterSlots) {
-                                       console.log("In the while loop");
                     selection = Random();
                     player4.add(selection);//adds  roll to the set
-                    console.log("Added character to player4");
                 }
                 }
             }
@@ -203,7 +192,7 @@
             player1.forEach(function (item) {
                 var path = "/ironman/images/" + item + ".png";
                 divs += '<div class="flex-item" ><img src="' + path + '"></div>';
-                console.log(divs)
+            //    console.log(divs)
             });
 
             document.getElementById("player1").innerHTML = divs;
@@ -211,7 +200,7 @@
             player2.forEach(function (item) {
                 var path = "/ironman/images/" + item + ".png";
                 divs += '<div class="flex-item" ><img src="' + path + '"></div>';
-                console.log(divs)
+              //  console.log(divs)
             });
 
             document.getElementById("player2").innerHTML = divs;
@@ -219,7 +208,7 @@
             player3.forEach(function (item) {
                 var path = "/ironman/images/" + item + ".png";
                 divs += '<div class="flex-item" ><img src="' + path + '"></div>';
-                console.log(divs)
+              //  console.log(divs)
             });
 
             document.getElementById("player3").innerHTML = divs;
@@ -227,7 +216,7 @@
             player4.forEach(function (item) {
                 var path = "/ironman/images/" + item + ".png";
                 divs += '<div class="flex-item" ><img src="' + path + '"></div>';
-                console.log(divs)
+                //console.log(divs)
             });
 
             document.getElementById("player4").innerHTML = divs;
@@ -236,7 +225,7 @@
             var path = "/ironman/stages/" + stage + ".png";
          divs += '<div class="flex-item" ><img src="' + path + '"></div>';
             document.getElementById("stage").innerHTML = divs;
-        console.log(stage);
+
         }
     </script>
 </body>
