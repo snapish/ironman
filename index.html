@@ -94,7 +94,8 @@
             var selection;
             var bool = false;
             var stage = Random() % 17;
-            
+            if(stage == 0)
+                stage += 1;
             
             while (player1.size < characterSlots) { //runs thru until set is full 
                 if(!document.getElementById("shittiesbox").checked)
