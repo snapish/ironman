@@ -28,7 +28,7 @@ body{
     background-color: #76A3F4;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 7px 15px; //15,32
     text-align: center;
     text-decoration: none;
     display: inline-block;
