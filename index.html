@@ -66,6 +66,8 @@
     <script>
         var stageset = new Set();
         var checkbox = document.getElementById("checkbox"); 
+        var shittiesbox = document.getElementById("shittiesbox").value;
+        boolean enabledShitties = false;
         var shitties = [14,16,17,19,22,23,25,4,6,7]; //array of characters image numbers--- kirby, zelda, link, pichu, mewtwo, gw, roy,yoshi, bowser, dk
         checkbox.addEventListener('change', function () { //when the checkbox is used
             if(document.getElementById("chars").value == 26){ //if 26 is selected
@@ -76,6 +78,15 @@
             } else {
                 document.getElementById("shiek").style.display = "none"; //hides shiek
 
+            }
+        });
+        shittiesbox.addEventListener('change', function(){
+        if(shittiesbox){
+         document.getElementById("chars").value =  16;  
+            document.getElementById("chars").size = 16;
+        }
+            else{
+             document.getElementById("chars").value = 26;   
             }
         });
         function Random() {
