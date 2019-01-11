@@ -24,6 +24,9 @@ body{
   font-size: 3em;
   text-align: center;
 }
+p{
+ color: white; 
+}
 #roll {
     background-color: #76A3F4;
     border: none;
