@@ -106,7 +106,7 @@
             var selection;
             var bool = false;
             var stage = StageRandom();
-            if(document.getElementById("shittiesbox").checked){
+            if(document.getElementById("shittiesbox").checked || document.getElementById("chars").value >= 16){
              characterSlots = 16;
                 console.log("shitter box was checked and changed slots to 16");
             }
