@@ -106,6 +106,13 @@
             var selection;
             var bool = false;
             var stage = StageRandom();
+            if($("shittiesbox").prop("checked") === true){
+             characterSlots = 16;
+                console.log("shitter box was checked and changed slots to 16");
+            }
+            else{
+             console.log("shitter box not checked, kept size the same");   
+            }
             if(stage == 0)
                 stage = 1;
             while (player1.size < characterSlots) { //runs thru until set is full 
