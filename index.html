@@ -81,7 +81,6 @@
                 document.getElementById("shiek").style.display = "block"; //shows shiek
             } else {
                 document.getElementById("shiek").style.display = "none"; //hides shiek
-
             }
         });
         function Random() {
@@ -141,7 +140,7 @@
             }
             
             
-            
+            if(document.getElementById("players").value >= 2){
               while (player2.size < characterSlots) { //runs thru until set is full 
                 if(!document.getElementById("shittiesbox").checked)
                     console.log("shitties are in play");
@@ -162,15 +161,13 @@
                 while (player2.size < characterSlots) {
                     selection = Random();
                     player2.add(selection);//adds  roll to the set
-
                 }
                 }
             }
-            
+        }
             
             if(document.getElementById("players").value == 4 || document.getElementById("players").value == 3){ //3 or 4 players selected
             while (player3.size < characterSlots) {
-
                 if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
                 while(bool){ 
                     selection = Random(); //rolls for 1-26
@@ -190,7 +187,6 @@
             }
             if(document.getElementById("players").value == 4 ){ 
             while (player4.size < characterSlots) {
-
                 if(document.getElementById("shittiesbox").checked){ // if no shitties is checked
                 while(bool){ 
                     selection = Random(); //rolls for 1-26
@@ -214,7 +210,6 @@
                 divs += '<div class="flex-item" ><img src="' + path + '"></div>';
             //    console.log(divs)
             });
-
             document.getElementById("player1").innerHTML = divs;
             var divs = '';
             player2.forEach(function (item) {
@@ -222,7 +217,6 @@
                 divs += '<div class="flex-item" ><img src="' + path + '"></div>';
               //  console.log(divs)
             });
-
             document.getElementById("player2").innerHTML = divs;
             var divs = '';
             player3.forEach(function (item) {
@@ -230,7 +224,6 @@
                 divs += '<div class="flex-item" ><img src="' + path + '"></div>';
               //  console.log(divs)
             });
-
             document.getElementById("player3").innerHTML = divs;
             var divs = '';
             player4.forEach(function (item) {
@@ -238,7 +231,6 @@
                 divs += '<div class="flex-item" ><img src="' + path + '"></div>';
                 //console.log(divs)
             });
-
             document.getElementById("player4").innerHTML = divs;
             
             var divs = '';
